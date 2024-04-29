@@ -1,0 +1,46 @@
+# Model Choices (case sensitive): WNet, Unet, FR
+model:
+  type: WNet
+  args:
+    {}
+# loss choices (case sensitive): BCELoss, CE_DiceLoss, Soft_clDice, DiceLoss, 
+loss:
+  type: CE_DiceLoss
+  args:
+    {}
+
+dataset:
+  type: CHASEDB
+  train_path: /mnt/qb/berens/users/jfadugba97/RetinaSegmentation/datasets/data_aug/Aug_data/CHASE/train/
+  valid_path: /mnt/qb/berens/users/jfadugba97/RetinaSegmentation/datasets/data_aug/Aug_data/CHASE/validate/
+  args:
+    {}
+  
+optimizer:
+  type: Adam
+  args:
+    lr: 1e-4
+    weight_decay: 1e-5
+
+lr_scheduler:
+  type: CosineAnnealingLR
+  args:
+    T_max: 40
+    
+# Data config
+size: 512
+batch_size: 4
+random_seed: 23
+num_workers: 8
+epochs: 100
+save_dir: /mnt/qb/berens/users/jfadugba97/RetinaSegmentation/model_results/WNet/
+val_per_epochs: 1
+save_period: 5
+
+tensorboard: true
+threshold: 0.5
+threshold_low: 0.3
+DTI: false
+amp: true # automatic mixed precision
+tta: false
+CCC: false
