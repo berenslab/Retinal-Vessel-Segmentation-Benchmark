@@ -11,7 +11,6 @@ We are actively expanding the benchmark to include more models, UQ methods, and 
 
 | Backbone Models      | Paper | Official Repo |
 | ----------- | ----------- | ----------- |
-
 | UNet |[link](https://arxiv.org/abs/1505.04597) | | 
 | FR-UNet | [link](https://ieeexplore.ieee.org/abstract/document/9815506) | [link](https://github.com/lseventeen/FR-UNet)|
 | MA-Net| [link](https://ieeexplore.ieee.org/document/9201310) |  |
